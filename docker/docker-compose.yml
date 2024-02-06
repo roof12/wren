@@ -1,0 +1,11 @@
+version: "3"
+services:
+  wren-telegram:
+    image: wren
+    container_name: wren-telegram
+    command: /usr/local/bin/wren --telegram
+    user: "${USER}:${GROUP}"
+    volumes:
+      - ~/.local/share/wren:/home/${USER}/.local/share/wren
+      - ~/.config/wren/wren.json:/home/${USER}/.config/wren/wren.json
+    restart: always
